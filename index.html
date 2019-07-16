@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>World of Lit</title>
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #000066;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+</style>
+
+</head>
+
+
+<body>
+<h1 class="fakeHeading">World of Lit</h1>
+<h4 class="fakeHeading">Hello! Welcome to a world for book nerds</h4>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="lc.jpeg" class="center" alt="The Lunar Chronicles" width ="200px">
+  <img class="mySlides" src="sfgae.jpeg" class="center" alt="The School for Good and Evil" width ="200px">
+  <img class="mySlides" src="legend.jpeg" class="center" alt="The Legend Trilogy" width ="200px">
+  <div class="w3-center w3-container w3-section w3-large w3-text-navy w3-display-bottommiddle" style="width:500px">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+  </div>
+</div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
+
+
+<p> </p>
+
+<button class="collapsible"> Bookies </button>
+<div class="content">
+   <p>It's not surprising that many popular books have moved on to the big screen. 
+   Yet, we must ask, how well do the movies truly portray the author's intentions.
+   Here, we have compiled some of the biggest successes- and flops- in cinematic and literary history.</p>
+   <img src="hp.jpeg" alt=Harry Potter Comparisons>
+   <p><b>Harry Potter</b><br>
+   ft. Daniel Radcliffe, Emma Watson, other important people</p>
+   <img src="pjo.jpeg" alt=Percy Jackson Comparisons width="270px">
+   <p><b>Percy Jackson The Lightning Thief</b><br>
+   aka The Biggest Disappointment</p>
+   <img src="hunger.jpeg" alt= Hunger Games Comparisons width="270px">
+   <p><b>Hunger Games</b><br>
+   ft. Jennifer Lawrence, other people</p>
+   <img src="siaas.jpeg" alt=The Sun is Also a Star>
+   <p><b>The Sun is Also a Star</b><br>
+   ft. Yara Shahidi, Charles Melton
+</div>
+
+<p> </p>
+<button class="collapsible">Library</button>
+<div class="content">
+  <p><div class="row">
+   <div class="column">
+      <a href="https://schoolforgoodandevil.com/"><img src="sfgae.jpeg" alt="The School for Good and Evil" width ="150px"></a>
+      <p class=".caption"><b>The School for Good and Evil</b> by Soman Chainani</p>
+   </div>
+   <div class="column">
+      <a href="https://lunarchronicles.universeofmarissameyer.com/"><img src="lc.jpeg" alt="The Lunar Chronicles" width ="150px"></a>
+      <p class=".caption"><b>Lunar Chronicles</b> by Marissa Meyer</p>
+   </div>
+   <div class="column">
+      <a href="http://www.onetrueportal.com/marielu/"><img src="warcross.jpeg" alt="Warcross" width ="150px"></a>
+      <p class=".caption"><b>Warcross</b> by Marie Lu</p>
+   </div>
+   <div class="column">
+      <a href="http://www.onetrueportal.com/marielu/"><img src="legend.jpeg" alt="Legend" width ="150px""></a>
+      <p class=".caption"><b>Legend</b> by Marie Lu</p>
+   </div>
+   <div class="column">
+      <a href="https://khaledhosseini.com/books/the-kite-runner/" alt=The Kite Runner"><img src="kite.jpeg" alt="The Kite Runner" width ="150px"></a>
+      <p class=".caption"><b>The Kite Runner</b> by Khaled Hosseini</p>
+   </div>
+   <dive class="column">
+      <a href="http://www.jenniferniven.com/books/allthebrightplaces/"><img src="atbp.jpeg" alt="All the Bright Places" width ="150px"></a>
+      <p class=".caption"><b>All the Bright Places</b> by Jennifer Niven</p>
+   </div></p>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+
+</body>
+
+
+
+</html>
+
+
